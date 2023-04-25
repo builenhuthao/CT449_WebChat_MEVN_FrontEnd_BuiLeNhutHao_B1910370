@@ -10,13 +10,12 @@
   "dependencies": {
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
-    "express-formidable": "^1.2.0",
-    "jquery": "^3.6.4",
+    "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "socket.io-client": "^4.5.0",
-    "sweetalert2": "^11.7.3",
+    "sweetalert2": "^11.4.9",
     "vue": "^3.2.13",
-    "vue-router": "^4.1.6",
+    "vue-router": "^4.0.14",
     "vuex": "^4.0.2"
   },
   "devDependencies": {

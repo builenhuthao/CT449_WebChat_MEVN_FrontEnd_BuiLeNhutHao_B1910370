@@ -2,7 +2,7 @@
   <div class="container" style="margin-top: 50px">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1>Login</h1>
+        <h1>Đăng Nhập</h1>
       </div>
     </div>
 
@@ -10,14 +10,14 @@
       <div class="offset-md-3 col-md-6">
         <form method="POST" v-on:submit.prevent="doLogin">
           <div class="form-group">
-            <label>Enter email</label>
+            <label>Email</label>
             <input type="email" class="form-control" name="email" required />
           </div>
 
           <br />
 
           <div class="form-group">
-            <label>Enter password</label>
+            <label>Mật khẩu</label>
             <input
               type="password"
               class="form-control"
@@ -27,14 +27,15 @@
           </div>
 
           <br />
-
-          <input
-            type="submit"
-            v-bind:value="isLoading ? 'Loading...' : 'Login'"
-            v-bind:disabled="isLoading"
-            name="submit"
-            class="btn btn-primary"
-          />
+          <div class="center">
+            <input
+              type="submit"
+              v-bind:value="isLoading ? 'Loading...' : 'Đăng Nhập'"
+              v-bind:disabled="isLoading"
+              name="submit"
+              class="btn btn-primary btn-block mb-4"
+            />
+          </div>
         </form>
       </div>
     </div>
@@ -64,7 +65,6 @@ export default {
 
       if (response.data.status == "success") {
         var accessToken = response.data.accessToken;
-
         localStorage.setItem(this.$accessTokenKey, accessToken);
 
         setTimeout(function () {

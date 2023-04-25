@@ -2,7 +2,7 @@
   <footer style="padding: 25px">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 text-center text-white">Copyright {{ year }}</div>
+        <div class="col-md-12 text-center text-black">Copyright {{ year }}</div>
       </div>
     </div>
   </footer>
@@ -10,6 +10,7 @@
 
 <script>
 import { computed } from "vue";
+
 export default {
   setup() {
     const year = computed(function () {

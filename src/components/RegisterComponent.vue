@@ -2,7 +2,7 @@
   <div class="container" style="margin-top: 50px">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1>Register</h1>
+        <h1>Đăng Ký</h1>
       </div>
     </div>
 
@@ -10,25 +10,26 @@
       <div class="offset-md-3 col-md-6">
         <form method="POST" v-on:submit.prevent="doRegister">
           <div class="form-group">
-            <label>Enter name</label>
+            <label>Họ và tên</label>
             <input type="text" class="form-control" name="name" required />
           </div>
 
           <br />
 
           <div class="form-group">
-            <label>Enter email</label>
+            <label>Email</label>
             <input type="email" class="form-control" name="email" required />
           </div>
 
           <br />
 
           <div class="form-group">
-            <label>Enter password</label>
+            <label>Mật khẩu</label>
             <input
               type="password"
               class="form-control"
               name="password"
+              ss
               required
             />
           </div>
@@ -37,10 +38,10 @@
 
           <input
             type="submit"
-            v-bind:value="isLoading ? 'Loading...' : 'Register'"
+            v-bind:value="isLoading ? 'Loading...' : 'Đăng ký'"
             v-bind:disabled="isLoading"
             name="submit"
-            class="btn btn-primary"
+            class="btn btn-primary btn-block mb-4"
           />
         </form>
       </div>
@@ -51,6 +52,7 @@
 <script>
 import axios from "axios";
 import swal from "sweetalert2";
+
 export default {
   data() {
     return {
@@ -71,10 +73,12 @@ export default {
       );
 
       this.isLoading = false;
-      swal.fire("Success", response.data.message, "success");
+      swal.fire("Đăng Ký", response.data.message, "success");
 
       if (response.data.status == "success") {
-        form.reset();
+        this.$router.push({
+          path: "/login",
+        });
       }
     },
   },
